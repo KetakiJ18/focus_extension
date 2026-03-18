@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  color: #ff5252;
+}
+
+h2 {
+  font-size: 24px;
+  color: #4CAF50;
+}
