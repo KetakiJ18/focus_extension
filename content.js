@@ -41,9 +41,16 @@ function showOverlay() {
     document.getElementById("scroll").onclick = delayAccess;
 }
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const overlay = document.getElementById("focus-overlay");
+    if (overlay) overlay.remove();
+  }
+});
+
 function allowAccess() {
+  setMode("productive");
   document.getElementById("focus-overlay").remove();
-  updateStats("productive");
 }
 
 function delayAccess() {
@@ -56,24 +63,15 @@ function delayAccess() {
 
     if (seconds < 0) {
       clearInterval(interval);
+      setMode("mindless");
       document.getElementById("focus-overlay").remove();
-      updateStats("mindless");
     }
   }, 1000);
 }
 
-function updateStats(type) {
-  const today = new Date().toISOString().split("T")[0];
-
-  chrome.storage.local.get(["dailyStats"], (data) => {
-    let stats = data.dailyStats || {};
-
-    if (!stats[today]) {
-      stats[today] = { productive: 0, mindless: 0 };
-    }
-
-    stats[today][type] += 5; // assume 5 min session (MVP shortcut)
-
-    chrome.storage.local.set({ dailyStats: stats });
+function setMode(type) {
+  chrome.runtime.sendMessage({
+    type: "SET_MODE",
+    value: type
   });
 }

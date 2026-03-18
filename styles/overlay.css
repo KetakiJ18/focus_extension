@@ -14,13 +14,18 @@
 }
 
 .focus-box {
-  background: rgba(20, 20, 20, 0.9);
-  padding: 30px 40px;
-  border-radius: 16px;
-  text-align: center;
-  color: white;
-  width: 320px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 h1 {
@@ -46,6 +51,10 @@ button {
   font-size: 14px;
   cursor: pointer;
   transition: 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.97);
 }
 
 .primary {

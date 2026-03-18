@@ -1,21 +1,36 @@
 body {
   margin: 0;
+  font-family: Arial;
   background: #0f0f0f;
   color: white;
-  font-family: 'Inter', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+}
+
+.widget {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 10px 15px;
+  border-radius: 10px;
   text-align: center;
 }
 
-h1 {
-  font-size: 40px;
-  color: #ff5252;
+.center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
 }
 
-h2 {
-  font-size: 24px;
-  color: #4CAF50;
+.logo {
+  font-size: 40px;
+}
+
+input {
+  width: 400px;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
 }

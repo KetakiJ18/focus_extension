@@ -1,15 +1,19 @@
 chrome.storage.local.get(["dailyStats"], (data) => {
   const stats = data.dailyStats || {};
-  const heatmapDiv = document.getElementById("heatmap");
+  const heatmap = document.getElementById("heatmap");
 
-  const days = Object.keys(stats).slice(-7);
+  const days = Object.keys(stats).slice(-28);
 
   days.forEach(day => {
-    const div = document.createElement("div");
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
 
-    const hours = (stats[day].productive / 60).toFixed(1);
+    const hours = stats[day].productive / 60;
 
-    div.innerText = `${day}: ${hours} hrs`;
-    heatmapDiv.appendChild(div);
+    if (hours > 3) cell.style.background = "#4caf50";
+    else if (hours > 1) cell.style.background = "#81c784";
+    else if (hours > 0) cell.style.background = "#c8e6c9";
+
+    heatmap.appendChild(cell);
   });
 });
