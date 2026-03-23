@@ -26,9 +26,6 @@ A productivity-focused Chrome extension designed to reduce distractions, improve
 - Chrome Extension APIs (Manifest V3)
 - HTML/CSS
 
-## 📸 Screenshots
-(Add here)
-
 ## ⚡ Future Improvements
 - Focus streak system
 - AI-based nudges
