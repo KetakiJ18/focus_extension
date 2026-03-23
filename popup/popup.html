@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h2>Focus Stats</h2>
-    <p id="productive"></p>
-    <p id="mindless"></p>
 
-    <script src="popup.js"></script>
+  <div class="container">
+    <h2>Focus</h2>
 
-    <h3>Productivity</h3>
-    <div id="heatmap" class="grid"></div>
+    <div class="card">
+      <p id="focusTime"></p>
+      <p id="wasteTime"></p>
+    </div>
 
     <button id="openDashboard">Open Dashboard</button>
+  </div>
+
+  <script src="popup.js"></script>
 </body>
 </html>

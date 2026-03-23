@@ -1,3 +1,15 @@
+:root {
+  --bg: #0f172a;
+  --card: rgba(30, 41, 59, 0.6);
+  --border: rgba(255,255,255,0.08);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+
+  --green: #22c55e;
+  --green-soft: #4ade80;
+  --red: #ef4444;
+}
+
 body {
     font-family: Arial;
     padding: 10px;
@@ -6,13 +18,13 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, 14px);
   gap: 4px;
 }
 
 .cell {
-  width: 20px;
-  height: 20px;
-  background: #222;
+  width: 14px;
+  height: 14px;
   border-radius: 3px;
+  background: #1e293b;
 }
