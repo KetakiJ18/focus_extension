@@ -1,10 +1,10 @@
-const distractingSites = [
-  "youtube.com",
-  "instagram.com",
-  "twitter.com",
-  "facebook.com",
-  "reddit.com"
-];
+chrome.storage.local.get(["sites"], (data) => {
+  const sites = data.sites || [];
+
+  if (sites.some(site => window.location.href.includes(site))) {
+    showOverlay();
+  }
+});
 
 function isDistractingSite(url) 
 {

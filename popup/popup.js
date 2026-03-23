@@ -17,3 +17,9 @@ chrome.storage.local.get(["dailyStats"], (data) => {
     heatmap.appendChild(cell);
   });
 });
+
+document.getElementById("openDashboard").onclick = () => {
+  chrome.tabs.create({
+    url: chrome.runtime.getURL("dashboard/dashboard.html")
+  });
+};
